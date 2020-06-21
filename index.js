@@ -15,7 +15,8 @@ export default Vue.directive('google-signin-button', {
       gapi.load('auth2', () => {
         const auth2 = gapi.auth2.init({
           client_id: clientId,
-          cookiepolicy: 'single_host_origin'
+          cookiepolicy: 'single_host_origin',
+          scope: 'profile email'
         })
         auth2.attachClickHandler(el, {},
           OnSuccess,
